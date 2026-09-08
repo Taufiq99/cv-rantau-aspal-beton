@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV Rantau Aspal Beton — Jasa Konstruksi Jalan, Jembatan &amp; Bangunan</title>
+<style>
+  :root{
+    --navy: #16283A;
+    --navy-deep: #0F1D2B;
+    --concrete: #F1EFEA;
+    --concrete-dark: #E4E1D9;
+    --steel: #5C6670;
+    --orange: #E8600C;
+    --orange-dark: #C24E08;
+    --ink: #17191B;
+    --line: rgba(255,255,255,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--concrete);
+    color:var(--ink);
+    font-family:'Barlow', Arial, sans-serif;
+    font-size:16px;
+    line-height:1.55;
+  }
+  h1,h2,h3,.head-font{
+    font-family:'Barlow Condensed','Arial Narrow',sans-serif;
+    font-weight:700;
+    letter-spacing:0.01em;
+    line-height:1.05;
+    margin:0;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  @media (max-width:640px){.wrap{padding:0 20px;}}
+
+  /* ===== Header ===== */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--navy);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 0;
+  }
+  .logo{
+    display:flex;align-items:center;gap:10px;
+    color:var(--concrete);
+  }
+  .logo-mark{
+    width:34px;height:34px;flex:none;
+  }
+  .logo-plate{
+    background:#F1EFEA;padding:6px 10px;border-radius:2px;flex:none;
+    display:flex;align-items:center;
+  }
+  .logo-text{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:19px;letter-spacing:0.01em;}
+  .logo-text span{display:block;font-family:'Barlow',sans-serif;font-weight:400;font-size:11px;color:#9FB0BE;letter-spacing:0.04em;}
+  nav.links{display:flex;gap:30px;}
+  nav.links a{
+    color:#C9D3DA;font-size:15px;font-weight:500;
+    padding:6px 2px;border-bottom:2px solid transparent;
+    transition:border-color .2s, color .2s;
+  }
+  nav.links a:hover{color:#fff;border-color:var(--orange);}
+  .nav-cta{
+    background:var(--orange);color:#fff;padding:10px 20px;
+    font-weight:600;font-size:14.5px;border-radius:2px;
+    transition:background .2s;
+  }
+  .nav-cta:hover{background:var(--orange-dark);}
+  .burger{display:none;background:none;border:none;color:var(--concrete);font-size:26px;cursor:pointer;}
+  @media (max-width:860px){
+    nav.links{display:none;}
+    .nav-cta{display:none;}
+    .burger{display:block;}
+    .nav.open ~ .mobile-menu{display:flex;}
+  }
+  .mobile-menu{
+    display:none;flex-direction:column;background:var(--navy-deep);
+    border-top:1px solid var(--line);
+  }
+  .mobile-menu a{padding:16px 28px;color:#DCE4E9;border-bottom:1px solid var(--line);font-size:15px;}
+  .mobile-menu a.cta{color:var(--orange);font-weight:700;}
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;background:var(--navy);color:var(--concrete);
+    overflow:hidden;
+    padding:90px 0 100px;
+  }
+  .blueprint-grid{
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:44px 44px;
+    opacity:.5;
+    mask-image:linear-gradient(to bottom, black, transparent 92%);
+  }
+  .hero-inner{position:relative;display:grid;grid-template-columns:1.15fr 0.85fr;gap:50px;align-items:center;}
+  @media (max-width:900px){.hero-inner{grid-template-columns:1fr;}}
+  .eyebrow-line{
+    display:flex;align-items:center;gap:12px;margin-bottom:22px;color:#9FB0BE;font-size:13.5px;
+  }
+  .eyebrow-line .dash{width:34px;height:2px;background:var(--orange);}
+  .hero h1{
+    font-size:clamp(38px,5.6vw,64px);
+    color:#fff;
+    max-width:11.5ch;
+  }
+  .hero h1 em{
+    font-style:normal;color:var(--orange);
+  }
+  .hero p.lead{
+    margin-top:22px;max-width:46ch;color:#B9C6CF;font-size:17px;
+  }
+  .hero-actions{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:14px 26px;font-weight:600;font-size:15px;
+    border-radius:2px;transition:transform .15s, background .2s, border-color .2s;
+  }
+  .btn-primary{background:var(--orange);color:#fff;}
+  .btn-primary:hover{background:var(--orange-dark);}
+  .btn-outline{border:1.5px solid #4C5F6E;color:#EAF0F3;}
+  .btn-outline:hover{border-color:#EAF0F3;}
+
+  .hero-stats{
+    display:grid;grid-template-columns:1fr 1fr;gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .stat{
+    background:var(--navy-deep);padding:26px 22px;
+  }
+  .stat b{
+    font-family:'Barlow Condensed',sans-serif;font-size:38px;color:var(--orange);display:block;font-weight:700;
+  }
+  .stat span{font-size:13px;color:#9FB0BE;}
+
+  /* ===== Section headings ===== */
+  .section{padding:88px 0;}
+  .section.tight{padding:70px 0;}
+  .sec-head{max-width:640px;margin-bottom:52px;}
+  .sec-head .kicker{
+    display:flex;align-items:center;gap:12px;color:var(--orange);font-weight:700;font-size:13.5px;margin-bottom:14px;
+  }
+  .sec-head .kicker .dash{width:28px;height:2px;background:var(--orange);}
+  .sec-head h2{font-size:clamp(28px,4vw,42px);color:var(--ink);}
+  .sec-head p{margin-top:16px;color:var(--steel);font-size:16px;max-width:56ch;}
+  .on-dark .sec-head h2{color:#fff;}
+  .on-dark .sec-head p{color:#B9C6CF;}
+
+  /* ===== About ===== */
+  .about{
+    display:grid;grid-template-columns:0.9fr 1.1fr;gap:60px;align-items:start;
+  }
+  @media (max-width:860px){.about{grid-template-columns:1fr;}}
+  .about-visual{
+    position:relative;background:var(--navy);aspect-ratio:4/5;
+    border:1px solid #D8D4C8;
+  }
+  .about-visual svg{width:100%;height:100%;}
+  .about-copy p{color:#3C4247;margin-bottom:18px;font-size:16px;}
+  .about-list{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:14px;}
+  .about-list li{
+    display:flex;gap:14px;align-items:flex-start;font-size:15px;color:var(--ink);
+  }
+  .about-list li .tick{
+    flex:none;width:20px;height:20px;margin-top:2px;
+  }
+
+  /* ===== Services ===== */
+  .services-list{
+    border-top:1px solid #D8D4C8;
+  }
+  .service-row{
+    display:grid;grid-template-columns:70px 1.1fr 1.5fr;gap:26px;
+    padding:30px 0;border-bottom:1px solid #D8D4C8;align-items:start;
+  }
+  @media (max-width:760px){.service-row{grid-template-columns:1fr;gap:10px;}}
+  .service-row .num{font-family:'Barlow Condensed',sans-serif;font-size:34px;color:var(--orange);font-weight:700;}
+  .service-row h3{font-size:22px;color:var(--ink);}
+  .service-row p{color:var(--steel);font-size:15.5px;margin:0;}
+
+  /* ===== Process (timeline - legit sequence) ===== */
+  .process{
+    background:var(--navy);color:var(--concrete);
+    position:relative;
+  }
+  .timeline{
+    position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  }
+  @media (max-width:860px){.timeline{grid-template-columns:1fr;}}
+  .timeline::before{
+    content:"";position:absolute;top:19px;left:0;right:0;height:1px;background:var(--line);
+  }
+  @media (max-width:860px){.timeline::before{display:none;}}
+  .tl-step{padding:0 22px 0 0;position:relative;}
+  @media (max-width:860px){.tl-step{padding:0 0 30px 34px;border-left:1px solid var(--line);margin-left:6px;}}
+  .tl-step .dot{
+    width:38px;height:38px;border:2px solid var(--orange);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;background:var(--navy);
+    font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--orange);font-size:16px;
+    position:relative;z-index:1;margin-bottom:22px;
+  }
+  @media (max-width:860px){.tl-step .dot{position:absolute;left:-19px;top:0;margin-bottom:0;}}
+  .tl-step h3{font-size:19px;color:#fff;margin-bottom:8px;}
+  .tl-step p{color:#AEBBC5;font-size:14.5px;margin:0;padding-right:8px;}
+
+  /* ===== Projects ===== */
+  .proj-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#D8D4C8;
+  }
+  @media (max-width:860px){.proj-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.proj-grid{grid-template-columns:1fr;}}
+  .proj-card{
+    background:var(--navy);color:#fff;aspect-ratio:4/3;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;justify-content:flex-end;padding:20px;
+  }
+  .proj-card svg{position:absolute;inset:0;width:100%;height:100%;opacity:.55;}
+  .proj-card .tag{
+    align-self:flex-start;background:var(--orange);color:#fff;font-size:11.5px;font-weight:700;
+    padding:4px 10px;margin-bottom:10px;position:relative;z-index:1;
+  }
+  .proj-card h4{position:relative;z-index:1;font-size:19px;color:#fff;}
+  .proj-card p{position:relative;z-index:1;color:#B9C6CF;font-size:13.5px;margin:4px 0 0;}
+
+  /* ===== Why us ===== */
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #D8D4C8;border-left:1px solid #D8D4C8;}
+  @media (max-width:860px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.why-grid{grid-template-columns:1fr;}}
+  .why-item{
+    border-right:1px solid #D8D4C8;border-bottom:1px solid #D8D4C8;
+    padding:32px 26px;
+  }
+  .why-item svg{width:30px;height:30px;margin-bottom:18px;}
+  .why-item h3{font-size:18px;margin-bottom:8px;color:var(--ink);}
+  .why-item p{color:var(--steel);font-size:14.5px;margin:0;}
+
+  /* ===== Clients ===== */
+  .client-strip{
+    display:flex;gap:44px;flex-wrap:wrap;align-items:center;justify-content:space-between;
+    padding:34px 0;border-top:1px solid #D8D4C8;border-bottom:1px solid #D8D4C8;
+  }
+  .client-strip span{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:700;color:#A9A497;letter-spacing:.02em;}
+
+  /* ===== CTA / Contact ===== */
+  .contact{background:var(--navy-deep);color:#fff;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  @media (max-width:860px){.contact-grid{grid-template-columns:1fr;}}
+  .contact h2{font-size:clamp(28px,4vw,40px);color:#fff;max-width:14ch;}
+  .contact p.lead{color:#AEBBC5;margin-top:16px;max-width:44ch;}
+  .contact-points{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:18px;}
+  .contact-points li{display:flex;gap:14px;align-items:flex-start;color:#DCE4E9;font-size:15px;}
+  .contact-points svg{flex:none;width:20px;height:20px;color:var(--orange);}
+
+  form.quote{display:grid;gap:16px;background:var(--navy);padding:34px;border:1px solid var(--line);}
+  form.quote label{font-size:13px;color:#9FB0BE;display:block;margin-bottom:6px;}
+  form.quote input, form.quote select, form.quote textarea{
+    width:100%;background:var(--navy-deep);border:1px solid #34495C;color:#fff;
+    padding:12px 14px;font-size:15px;font-family:inherit;border-radius:2px;
+  }
+  form.quote input:focus, form.quote select:focus, form.quote textarea:focus{
+    outline:2px solid var(--orange);outline-offset:1px;border-color:var(--orange);
+  }
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:520px){.row2{grid-template-columns:1fr;}}
+  form.quote button{
+    background:var(--orange);color:#fff;border:none;padding:15px;font-size:15.5px;font-weight:700;
+    cursor:pointer;border-radius:2px;transition:background .2s;
+  }
+  form.quote button:hover{background:var(--orange-dark);}
+  .form-note{font-size:12.5px;color:#7C8B98;}
+
+  /* ===== Footer ===== */
+  footer{background:var(--navy-deep);border-top:1px solid var(--line);padding:36px 0;}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .foot-inner p{color:#7C8B98;font-size:13.5px;margin:0;}
+  .foot-links{display:flex;gap:22px;}
+  .foot-links a{color:#9FB0BE;font-size:13.5px;}
+  .foot-links a:hover{color:#fff;}
+
+  ::selection{background:var(--orange);color:#fff;}
+  :focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  @media (prefers-reduced-motion: reduce){*{transition:none !important;scroll-behavior:auto !important;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav" id="navBar">
+    <a href="#top" class="logo">
+      <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
+        <rect x="2" y="2" width="36" height="36" stroke="#E8600C" stroke-width="2" fill="none"/>
+        <text x="20" y="25" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="14" fill="#F1EFEA" text-anchor="middle">RAB</text>
+      </svg>
+      <span class="logo-text">RANTAU ASPAL BETON<span>CV — Jasa Konstruksi</span></span>
+    </a>
+    <nav class="links">
+      <a href="#tentang">Tentang</a>
+      <a href="#visimisi">Visi &amp; Misi</a>
+      <a href="#layanan">Bidang Usaha</a>
+      <a href="#legalitas">Legalitas</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+    <a href="#kontak" class="nav-cta">Hubungi Kami</a>
+    <button class="burger" id="burgerBtn" aria-label="Buka menu">&#9776;</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#tentang">Tentang</a>
+    <a href="#visimisi">Visi &amp; Misi</a>
+    <a href="#layanan">Bidang Usaha</a>
+    <a href="#legalitas">Legalitas</a>
+    <a href="#kontak" class="cta">Hubungi Kami</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="blueprint-grid"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <div class="eyebrow-line"><span class="dash"></span> CV — Terdaftar resmi dalam sistem OSS &amp; Kemenkumham RI</div>
+      <h1>Membangun struktur yang <em>kokoh</em>, tepat waktu, sesuai anggaran.</h1>
+      <p class="lead">CV Rantau Aspal Beton adalah badan usaha jasa konstruksi yang berkedudukan di Kabupaten Hulu Sungai Selatan, Kalimantan Selatan, melayani pekerjaan konstruksi gedung, jalan, jembatan, hingga jaringan irigasi dan drainase.</p>
+      <div class="hero-actions">
+        <a href="#kontak" class="btn btn-primary">Konsultasikan Proyek Anda</a>
+        <a href="#layanan" class="btn btn-outline">Lihat Bidang Usaha</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b>10+</b><span>Proyek selesai</span></div>
+      <div class="stat"><b>3</b><span>Tahun beroperasi</span></div>
+      <div class="stat"><b>4</b><span>Klasifikasi bidang usaha (KBLI)</span></div>
+      <div class="stat"><b>PMDN</b><span>Status penanaman modal</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tentang">
+  <div class="wrap about">
+    <div class="about-visual">
+      <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+        <rect width="400" height="500" fill="#16283A"/>
+        <g stroke="#3C5670" stroke-width="1">
+          <line x1="0" y1="60" x2="400" y2="60"/><line x1="0" y1="150" x2="400" y2="150"/>
+          <line x1="0" y1="260" x2="400" y2="260"/><line x1="0" y1="380" x2="400" y2="380"/>
+          <line x1="90" y1="0" x2="90" y2="500"/><line x1="230" y1="0" x2="230" y2="500"/><line x1="330" y1="0" x2="330" y2="500"/>
+        </g>
+        <g stroke="#E8600C" stroke-width="2.5" fill="none">
+          <rect x="90" y="150" width="140" height="230"/>
+          <line x1="90" y1="150" x2="230" y2="380"/>
+          <line x1="230" y1="150" x2="90" y2="380"/>
+          <rect x="130" y="260" width="60" height="120"/>
+        </g>
+        <g fill="#F1EFEA" opacity="0.8" font-family="Barlow, sans-serif" font-size="10">
+          <text x="100" y="145">CV. RAB</text><text x="240" y="145">Konstruksi</text>
+        </g>
+      </svg>
+    </div>
+    <div class="about-copy">
+      <div class="sec-head" style="margin-bottom:20px;">
+        <div class="kicker"><span class="dash"></span>TENTANG KAMI</div>
+        <h2>CV Rantau Aspal Beton</h2>
+      </div>
+      <p>CV Rantau Aspal Beton adalah badan usaha berbentuk Persekutuan Komanditer (CV) yang bergerak di bidang jasa konstruksi. Berdirinya perusahaan kami sebagai bentuk respon atas peluang di dunia konstruksi dan engineering yang semakin terbuka dan berkembang di Indonesia. Kami merupakan perusahaan yang bergerak di bidang General Contractor & Supplier, didukung oleh sumber daya manusia yang profesional dalam memberikan pelayanan terbaik untuk menjamin kepuasan pelanggan kami.</p>
+      <p>Komitmen kami untuk menyelesaikan setiap pekerjaan konstruksi yang telah dipercayakan tidak terlepas dari peran setiap anggota perusahaan dalam melakukan perencanaan, pelaksanaan, dan pengendalian proyek dengan sistem manajemen dan metode konstruksi yang efektif dan efisien, serta memperhatikan standar K3 (Keselamatan Kesehatan Kerja) dan lingkungan kerja.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section process" id="visimisi">
+  <div class="wrap on-dark">
+    <div class="sec-head">
+      <div class="kicker"><span class="dash"></span>VISI &amp; MISI</div>
+      <h2>Arah dan komitmen perusahaan</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:50px;">
+      <div>
+        <h3 style="font-size:20px;color:var(--orange);margin-bottom:14px;">Visi Perusahaan</h3>
+        <p style="color:#C9D3DA;font-size:16px;">Menjadi perusahaan yang terpercaya dalam industri jasa konstruksi dengan komitmen untuk selalu tumbuh berkembang secara konsisten serta memberikan pelayanan yang prima.</p>
+      </div>
+      <div>
+        <h3 style="font-size:20px;color:var(--orange);margin-bottom:14px;">Misi Perusahaan</h3>
+        <ul style="color:#C9D3DA;font-size:15.5px;padding-left:20px;display:grid;gap:10px;margin:0;">
+          <li>Membangun dan menjaga kerjasama yang profesional, unggul, dan kompeten.</li>
+          <li>Melakukan pengembangan terus menerus untuk meningkatkan optimalitas kerja dan nilai pelayanan yang mampu bersaing dalam industri jasa konstruksi.</li>
+          <li>Mengutamakan pencapaian kualitas kerja yang sesuai harapan dan kebutuhan mitra.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight" style="background:var(--concrete-dark);">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker"><span class="dash"></span>RUANG LINGKUP</div>
+      <h2>Cakupan pekerjaan berdasarkan izin usaha</h2>
+      <p>Sesuai lampiran Nomor Induk Berusaha, CV Rantau Aspal Beton memiliki izin untuk menjalankan empat klasifikasi bidang usaha konstruksi berikut, dengan tingkat risiko Menengah Tinggi.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section process" id="layanan">
+  <div class="wrap on-dark">
+    <div class="sec-head">
+      <div class="kicker"><span class="dash"></span>BIDANG USAHA</div>
+      <h2>Klasifikasi usaha berdasarkan KBLI</h2>
+    </div>
+    <div class="services-list" style="border-top-color:var(--line);">
+      <div class="service-row" style="border-bottom-color:var(--line);">
+        <div class="num">41019</div>
+        <h3 style="color:#fff;">Konstruksi Gedung Lainnya</h3>
+        <p style="color:#B9C6CF;">Pekerjaan konstruksi bangunan gedung di luar bangunan hunian.</p>
+      </div>
+      <div class="service-row" style="border-bottom-color:var(--line);">
+        <div class="num">42101</div>
+        <h3 style="color:#fff;">Konstruksi Bangunan Sipil Jalan</h3>
+        <p style="color:#B9C6CF;">Pekerjaan pembangunan dan pemeliharaan jalan.</p>
+      </div>
+      <div class="service-row" style="border-bottom-color:var(--line);">
+        <div class="num">42102</div>
+        <h3 style="color:#fff;">Konstruksi Jembatan, Jalan Layang &amp; Underpass</h3>
+        <p style="color:#B9C6CF;">Pekerjaan konstruksi bangunan sipil jembatan, jalan layang, fly over, dan underpass.</p>
+      </div>
+      <div class="service-row" style="border-bottom-color:var(--line);">
+        <div class="num">42201</div>
+        <h3 style="color:#fff;">Konstruksi Jaringan Irigasi &amp; Drainase</h3>
+        <p style="color:#B9C6CF;">Pekerjaan konstruksi jaringan irigasi dan sistem drainase.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section process" id="proses">
+  <div class="wrap on-dark">
+    <div class="sec-head">
+      <div class="kicker"><span class="dash"></span>ALUR KERJA</div>
+      <h2>Proses dari konsultasi hingga serah terima</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-step">
+        <div class="dot">1</div>
+        <h3>Konsultasi &amp; Survei</h3>
+        <p>Diskusi kebutuhan, survei lokasi, dan estimasi awal biaya dalam 3–5 hari kerja.</p>
+      </div>
+      <div class="tl-step">
+        <div class="dot">2</div>
+        <h3>Perencanaan &amp; RAB</h3>
+        <p>Penyusunan gambar kerja, rencana anggaran biaya, dan jadwal pelaksanaan yang disepakati bersama.</p>
+      </div>
+      <div class="tl-step">
+        <div class="dot">3</div>
+        <h3>Pelaksanaan</h3>
+        <p>Pekerjaan di lapangan dengan laporan progres mingguan dan pengawasan mutu berkala.</p>
+      </div>
+      <div class="tl-step">
+        <div class="dot">4</div>
+        <h3>Serah Terima</h3>
+        <p>Inspeksi akhir, dokumentasi as-built, dan masa pemeliharaan pasca-serah terima.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="legalitas">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker"><span class="dash"></span>LEGALITAS PERUSAHAAN</div>
+      <h2>Landasan hukum operasional kami</h2>
+      <p>CV Rantau Aspal Beton beroperasi sebagai badan usaha resmi yang tercatat dalam sistem Online Single Submission (OSS) dan Sistem Administrasi Badan Usaha Kementerian Hukum dan HAM Republik Indonesia.</p>
+    </div>
+    <div class="services-list">
+      <div class="service-row">
+        <div class="num">01</div>
+        <h3>Akta Pendirian Perseroan Komanditer</h3>
+        <p>Akta Nomor 5 tanggal 27 April 2023, dibuat oleh Herry, S.H., M.Kn., Notaris Kota Banjarbaru (S.K. Menteri Hukum dan HAM RI Nomor AHU-00234.AH.02.01.Tahun 2017).</p>
+      </div>
+      <div class="service-row">
+        <div class="num">02</div>
+        <h3>Surat Keterangan Terdaftar Kemenkumham</h3>
+        <p>Nomor AHU-0028414-AH.01.14 Tahun 2023, diterbitkan di Jakarta tanggal 27 April 2023.</p>
+      </div>
+      <div class="service-row">
+        <div class="num">03</div>
+        <h3>Nomor Induk Berusaha (NIB)</h3>
+        <p>0305230047168 — diterbitkan melalui sistem OSS tanggal 3 Mei 2023, status penanaman modal PMDN, skala Usaha Mikro.</p>
+      </div>
+      <div class="service-row">
+        <div class="num">04</div>
+        <h3>Sertifikat Standar (KBLI)</h3>
+        <p>Berlaku untuk 4 klasifikasi bidang usaha konstruksi (41019, 42101, 42102, 42201) dengan status telah terverifikasi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight" style="background:var(--concrete-dark);">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker"><span class="dash"></span>DOMISILI USAHA</div>
+      <h2>Berkedudukan di Kalimantan Selatan</h2>
+      <p>Gambah Luar Muka, Desa/Kelurahan Gambah Luar Muka, Kecamatan Kandangan, Kabupaten Hulu Sungai Selatan, Provinsi Kalimantan Selatan, Kode Pos 71216.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section tight" style="background:var(--concrete-dark);">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker"><span class="dash"></span>KEUNGGULAN</div>
+      <h2>Alasan bermitra dengan kami</h2>
+    </div>
+  </div>
+  <div class="wrap" style="padding:0;">
+  <div class="why-grid">
+    <div class="why-item">
+      <svg viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="12" stroke="#E8600C" stroke-width="2"/><path d="M9 15l4 4 8-9" stroke="#E8600C" stroke-width="2"/></svg>
+      <h3>Terdaftar Resmi</h3>
+      <p>Tercatat dalam sistem OSS dan Sistem Administrasi Badan Usaha Kemenkumham RI.</p>
+    </div>
+    <div class="why-item">
+      <svg viewBox="0 0 30 30" fill="none"><rect x="6" y="6" width="18" height="18" stroke="#E8600C" stroke-width="2"/><path d="M11 15h8M15 11v8" stroke="#E8600C" stroke-width="2"/></svg>
+      <h3>Bidang Usaha Beragam</h3>
+      <p>Mencakup konstruksi gedung, jalan, jembatan, hingga jaringan irigasi dan drainase.</p>
+    </div>
+    <div class="why-item">
+      <svg viewBox="0 0 30 30" fill="none"><path d="M15 5v10l7 4" stroke="#E8600C" stroke-width="2" fill="none"/><circle cx="15" cy="15" r="11" stroke="#E8600C" stroke-width="2"/></svg>
+      <h3>Sertifikat Terverifikasi</h3>
+      <p>Sertifikat Standar untuk setiap klasifikasi usaha berstatus telah terverifikasi.</p>
+    </div>
+    <div class="why-item">
+      <svg viewBox="0 0 30 30" fill="none"><path d="M15 4l9 4v7c0 6-4 9.5-9 11-5-1.5-9-5-9-11V8l9-4z" stroke="#E8600C" stroke-width="2" fill="none"/></svg>
+      <h3>Berbasis Kalimantan Selatan</h3>
+      <p>Berkedudukan di Kabupaten Hulu Sungai Selatan, melayani wilayah Kalimantan Selatan.</p>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="section contact" id="kontak">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Punya rencana proyek? Mari kita bicarakan.</h2>
+      <p class="lead">Kirim detail kebutuhan Anda dan tim CV Rantau Aspal Beton akan menghubungi Anda untuk menjadwalkan survei lokasi.</p>
+      <ul class="contact-points">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h4l2 6-3 2a12 12 0 006 6l2-3 6 2v4a2 2 0 01-2 2A16 16 0 013 7a2 2 0 012-2z"/></svg>
+          0838-4191-4358
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
+          cvrantauaspalbeton@gmail.com
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Gambah Luar Muka, Kec. Kandangan, Kab. Hulu Sungai Selatan, Kalimantan Selatan 71216
+        </li>
+      </ul>
+    </div>
+    <form class="quote" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Terkirim ✓'; this.querySelector('button').style.background='#2E7D32';">
+      <div>
+        <label for="nama">Nama Lengkap</label>
+        <input id="nama" type="text" required placeholder="Nama Anda">
+      </div>
+      <div class="row2">
+        <div>
+          <label for="telp">No. Telepon</label>
+          <input id="telp" type="tel" required placeholder="08xx-xxxx-xxxx">
+        </div>
+        <div>
+          <label for="jenis">Jenis Proyek</label>
+          <select id="jenis">
+            <option>Bangunan Sipil Jalan</option>
+            <option>Bangunan Sipil Jembatan, Jalan Layang, Fly Over, dan Underpass</option>
+            <option>Jaringan Irigasi dan Drainase</option>
+            <option>Lainnya</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label for="pesan">Detail Kebutuhan</label>
+        <textarea id="pesan" rows="4" placeholder="Ceritakan singkat proyek Anda: lokasi, perkiraan luas, target waktu mulai"></textarea>
+      </div>
+      <button type="submit">Kirim Permintaan Penawaran</button>
+      <p class="form-note">Formulir ini contoh statis — hubungkan ke email atau CRM Anda untuk menerima data secara langsung.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <p>© 2026 CV Rantau Aspal Beton. Semua hak dilindungi.</p>
+    <div class="foot-links">
+      <a href="#tentang">Tentang</a>
+      <a href="#layanan">Bidang Usaha</a>
+      <a href="#kontak">Kontak</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const menu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => {
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(a=>{
+    a.addEventListener('click', ()=> menu.style.display='none');
+  });
+</script>
+
+</body>
+</html>
